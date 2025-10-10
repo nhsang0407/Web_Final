@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Đăng nhập HiAn</title>
+        <link rel="stylesheet" type="text/css" href="../css/login_css.css" />
+        <script src="../js/login_js.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="left">
+                <img id="promo-img" src="../images/fruits.jpg"/> <!--add hinh vo cho dung hinh-->
+            </div>
+            <div class="right">
+                <h2>Chào mừng đến với <span class="highlight">HiAn!!!</span></h2>
+                <div class="center">
+                    <div class="buttons">
+                        <button id="loginBtn" class="login_style" onclick="showLogin()">Đăng nhập</button>
+                        <button id="registerBtn" onclick="showRegister()">Đăng ký</button>
+                    </div>
+
+                    <p>Thêm đồ giòn ngon xịn xò? Vào <span class="highlight">HiAn!!!</span> liền tay.<br>
+                    Trái cây sấy <b>healthy</b>, ăn <b>chill</b> mà vẫn <b>chất!</b></p>
+                </div>
+
+                <!--Dang nhap-->
+                <form id="loginForm">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" placeholder="Nhập tên đăng nhập của bạn" />
+                    <label>Mật khẩu</label>
+                    <input type="password" placeholder="Nhập mật khẩu" />
+                    <div>
+                        <label><input type="checkbox"/> Lưu mật khẩu</label>
+                        <a href="#">Quên mật khẩu?</a>
+                    </div>
+                    <div class="center">
+                        <button type="submit" class="login-btn">Đăng nhập</button>
+                    </div>
+                </form>
+                <!--Dang ky-->
+                <form id="registerForm">
+                    <label>Tên đăng nhập</label>
+                    <input type="text" placeholder="Nhập tên đăng nhập của bạn" />
+                    <label>Mật khẩu</label>
+                    <input type="password" placeholder="Nhập mật khẩu" />
+                    <label>Xác nhận mật khẩu</label>
+                    <input type="password" placeholder="Nhập lại mật khẩu" />
+                    <div class="center">
+                        <button type="submit" class="register-btn">Đăng ký</button>
+                    </div>
+                </form>
+
+                <div class="social">
+                    <button class="google">Đăng nhập với Google</button>
+                    <button class="facebook">Đăng nhập với Facebook</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
