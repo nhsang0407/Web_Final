@@ -27,27 +27,27 @@
                 <!--Dang nhap-->
                 <form id="loginForm">
                     <label>Tên đăng nhập</label>
-                    <input type="text" placeholder="Nhập tên đăng nhập của bạn" />
+                    <input type="text" id="login_uid" name="login_uid" placeholder="Nhập tên đăng nhập của bạn" />
                     <label>Mật khẩu</label>
-                    <input type="password" placeholder="Nhập mật khẩu" />
+                    <input type="password" id="login_pwd" name="login_pwd" placeholder="Nhập mật khẩu" />
                     <div>
                         <label><input type="checkbox"/> Lưu mật khẩu</label>
-                        <a href="#">Quên mật khẩu?</a>
+                        <a href="#" onclick="forgotPassword()">Quên mật khẩu?</a>
                     </div>
                     <div class="center">
-                        <button type="submit" class="login-btn">Đăng nhập</button>
+                        <button type="button" class="login-btn" onclick="process_login(login_uid.value,login_pwd.value)">Đăng nhập</button>
                     </div>
                 </form>
                 <!--Dang ky-->
                 <form id="registerForm">
                     <label>Tên đăng nhập</label>
-                    <input type="text" placeholder="Nhập tên đăng nhập của bạn" />
+                    <input type="text" id="reg_uid" placeholder="Nhập tên đăng nhập của bạn" />
                     <label>Mật khẩu</label>
-                    <input type="password" placeholder="Nhập mật khẩu" />
+                    <input type="password" id="reg_pwd" placeholder="Nhập mật khẩu" />
                     <label>Xác nhận mật khẩu</label>
-                    <input type="password" placeholder="Nhập lại mật khẩu" />
+                    <input type="password" id="reg_pwd2" placeholder="Nhập lại mật khẩu" />
                     <div class="center">
-                        <button type="submit" class="register-btn">Đăng ký</button>
+                        <button type="button" class="register-btn" onclick="process_register()">Đăng ký</button>
                     </div>
                 </form>
 
