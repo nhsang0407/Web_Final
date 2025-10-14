@@ -34,7 +34,18 @@ function showRegister() {
 
 // Khởi tạo mặc định khi load trang
 window.onload = function() {
-    showLogin();
+    // Lấy tham số từ URL (ví dụ: ?form=register)
+    const params = new URLSearchParams(window.location.search);
+    const formType = params.get("form");
+
+    // Kiểm tra người dùng bấm nút nào từ trang chủ
+    if (formType === "register") {
+        showRegister();
+    } else {
+        showLogin();
+    }
+
+    // Kiểm tra và tự động điền nếu đã lưu tài khoản
     const savedUsername = localStorage.getItem("savedUsername");
     const savedPassword = localStorage.getItem("savedPassword");
     if (savedUsername && savedPassword) {
@@ -67,20 +78,20 @@ function process_login(login_uid,login_pwd) //lấy trực tiếp từ bên html
     const user = users.find(u => u.username === login_uid && u.password === login_pwd);
 
     if (user) {
-        alert("Đăng nhập thành công!");
+        //alert("Đăng nhập thành công!");
 
         // Nếu có tick “Lưu mật khẩu”, thì lưu lại vào localStorage
         if (rememberBox.checked) {
             localStorage.setItem("savedUsername", login_uid);
             localStorage.setItem("savedPassword", login_pwd);
-            alert("Đã lưu")
         } else {
             localStorage.removeItem("savedUsername");
             localStorage.removeItem("savedPassword");
         }
 
+        localStorage.setItem("loggedUser", login_uid); // Lưu tên người dùng
         // Chuyển sang trang chính
-        window.location.href = "../html/home.html";
+        window.location.href="../../Page_HomePage/html/homepage.html"
     } else {
         alert("Sai tên đăng nhập hoặc mật khẩu!");
     }
