@@ -274,3 +274,141 @@ header {
 .banner .next {
   right: 20px;
 }
+
+/* --- DANH MỤC NỔI BẬT --- */
+.featured-section {
+  background: #e8f6e1;
+  padding: 40px 80px;
+  text-align: center;
+}
+
+.featured-title {
+  font-size: 28px;
+  color: #1f3d1f;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.featured-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.featured-item {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.featured-item:hover {
+  transform: translateY(-5px);
+}
+
+.featured-item img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.featured-info {
+  padding: 15px;
+}
+
+.featured-info h3 {
+  font-size: 18px;
+  color: #2c532c;
+  margin-bottom: 8px;
+}
+
+.featured-info p {
+  font-size: 16px;
+  color: #666;
+}
+
+.featured-info span {
+  color: #e67e22;
+  font-weight: bold;
+}
+
+.featured-info button {
+  margin-top: 10px;
+  background: #2c532c;
+  color: #fff;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.featured-info button:hover {
+  background: #3e7045;
+}
+
+/* --- Banner khuyến mãi --- */
+.promo-banner {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.banner-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(60%); /* làm tối ảnh để chữ nổi bật */
+  transition: transform 0.6s ease;
+}
+
+/* hiệu ứng khi hover */
+.promo-banner:hover .banner-bg {
+  transform: scale(1.05); /* zoom nhẹ */
+}
+
+.banner-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.banner-content h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.banner-content h1 {
+  font-size: 40px;
+  font-weight: 700;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.4);
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #5e9f39; /* xanh lá nổi bật */
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.buy-btn {
+  background-color: #5c9020;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.buy-btn:hover {
+  background-color: #4a7c1a;
+  transform: scale(1.05);
+}
