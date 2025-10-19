@@ -54,3 +54,25 @@ document.addEventListener("DOMContentLoaded", function () {
         };
     }
 });
+
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.banner-img');
+const totalSlides = slides.length;
+const slider = document.querySelector('.banner-slider');
+
+// Cập nhật vị trí slide
+function updateSlide() {
+  slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+// Hàm đổi slide
+function changeSlide(direction) {
+  currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+  updateSlide();
+}
+
+// Tự động chuyển slide mỗi 5 giây
+setInterval(() => {
+  changeSlide(1);
+}, 5000);
