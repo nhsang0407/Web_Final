@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HiAn</title>
+        <link rel="stylesheet" type="text/css" href="../../Page_HomePage/css/homepage_css.css">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <style>
+            /* import font Cherry Bomb One */
+            @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+        </style>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="top-header">
+                <div class="logo">
+                    <img src="../../Page_HomePage/images/LogoHiAn_ngang.png" alt="HiAn Logo" />
+                </div>
+
+                <div class="search-bar">
+                    <div class="search-category">
+                        <select>
+                            <option>Tất cả sản phẩm</option>
+                            <option>Thảo mộc sấy khô</option>
+                            <option>Trái cây sấy dẻo</option>
+                            <option>Trái cây sấy giòn</option>
+                            <option>Trái cây sấy thăng hoa</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Tìm kiếm" />
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+
+                <div class="user-actions">
+                    <div class="icon">
+                        <i class="fa fa-heart"></i>
+                        <span>Yêu thích</span>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                    </div>
+                    <!--Khi chưa đăng nhập-->
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="register-btn" onclick="window.location.href='../../Page_Login_Signup/html/login.html?form=register'">Đăng ký</button>
+                        <button class="login-btn" onclick="window.location.href='../../Page_Login_Signup/html/login.html?form=login'">Đăng nhập</button>
+                    </div>
+
+                    <!--Khi đã đăng nhập-->
+                    <div class="user-info" id="userInfo" style="display: none;" onclick="toggleMenu(event)">
+                        <img src="../images/default-avatar.jpg" alt="User Avatar" class="avatar">
+                        <span id="usernameDisplay">Người dùng</span>
+                        <i class="fa fa-chevron-down"></i>
+
+                        <!--Tạo dropdown-->
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li><a href="#">Tài khoản của tôi</a></li>
+                            <li><a href="#">Đơn hàng của tôi</a></li>
+                            <li><a href="#" id="logoutBtn">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="bottom-header">
+                <ul>
+                    <li class="active"><i class="fa fa-th-large"></i> Tất cả sản phẩm</li>
+                    <li><i class="fa fa-home"></i> Trang chủ</li>
+                    <li><i class="fa fa-users"></i> Về chúng tôi</li>
+                    <li><i class="fa fa-calendar"></i> Sự kiện</li>
+                    <li><i class="fa fa-edit"></i> Blog</li>
+                    <li><i class="fa fa-envelope"></i> Liên hệ</li>
+                    <li><i class="fa fa-phone"></i> 123-456-7890 <span class="order-now">ĐẶT HÀNG NGAY</span></li>
+                </ul>
+            </nav> 
+        </header>
+        <section class="account_container">
+            <!-- Sidebar -->
+            <aside class="account_sidebar">
+                <h4>TÀI KHOẢN</h4>
+                <ul>
+                    <li class="active" data-target="info">Thông tin tài khoản</li>
+                    <li data-target="orders">Lịch sử mua hàng</li>
+                    <li data-target="address">Danh sách địa chỉ</li>
+                    <li class="logout">Đăng xuất</li>
+                </ul>
+            </aside>
+
+            <!-- Main content -->
+            <div class="account_content">
+
+                <!-- THÔNG TIN TÀI KHOẢN -->
+                <div class="tab_content active" id="info">
+                    <div class="profile_header">
+                        <div class="profile_info">
+                            <img src="../Page_HomePage/images/default-avatar.jpg" alt="avatar">
+                            <div>
+                                <h4>Phạm Huyền</h4>
+                                <p>0976 106 992</p>
+                                <small>TP. Hồ Chí Minh</small>
+                            </div>
+                        </div>
+                        <div class="profile_actions">
+                            <button class="btn_green">Cập nhật ảnh</button>
+                            <button class="btn_white" id="editBtn">Chỉnh sửa</button>
+                        </div>
+                    </div>
+
+                    <!-- Xem thông tin -->
+                    <div class="view_mode" id="viewMode">
+                        <table class="account_info_table">
+                            <tr>
+                                <td><strong>Họ và tên:</strong></td>
+                                <td>Phạm Huyền</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Email:</strong></td>
+                                <td>phamthuyhuyenkdnt@gmail.com</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Số điện thoại:</strong></td>
+                                <td>0976 106 992</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Địa chỉ:</strong></td>
+                                <td>238/2b Đường Hoàng Diệu 2, Linh Chiểu, TP Thủ Đức, TP. HCM</td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <label><input type="checkbox" checked> Nhận thông báo về các sản phẩm mới, chương trình khuyến mãi hoặc bài viết thú vị thông qua email của tôi.</label>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                    <!-- Chỉnh sửa -->
+                    <form class="edit_mode" id="editMode">
+                        <label>Họ:</label>
+                        <input type="text" value="Phạm">
+                        <label>Tên:</label>
+                        <input type="text" value="Huyền">
+                        <label>Email:</label>
+                        <input type="email" value="phamthuyhuyenkdnt@gmail.com">
+                        <label>Số điện thoại:</label>
+                        <input type="text" value="0976 106 992">
+                        <label>Địa chỉ:</label>
+                        <input type="text" value="238/2b Đường Hoàng Diệu 2, Linh Chiểu, TP Thủ Đức, TP. HCM">
+                        <button class="btn_green">Cập nhật</button>
+                    </form>
+                </div>
+
+                <!-- LỊCH SỬ MUA HÀNG -->
+                <div class="tab_content" id="orders">
+                    <h3>Lịch sử mua hàng</h3>
+                    <table class="order_table">
+                        <thead>
+                            <tr>
+                                <th>Mã đơn</th>
+                                <th>Ngày đặt</th>
+                                <th>Tổng tiền</th>
+                                <th>Trạng thái</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#DH001</td>
+                                <td>10/10/2025</td>
+                                <td>350.000đ</td>
+                                <td>Hoàn thành</td>
+                            </tr>
+                            <tr>
+                                <td>#DH002</td>
+                                <td>12/10/2025</td>
+                                <td>150.000đ</td>
+                                <td>Đang giao</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- DANH SÁCH ĐỊA CHỈ -->
+                <div class="tab_content" id="address">
+                    <div class="address_card default">
+                        <div class="address_name">Phạm Huyền</div>
+                        <div class="address_info">
+                            <p><strong>Số điện thoại:</strong> 0976 106 992 
+                                <span class="default_tag">Địa chỉ mặc định</span>
+                            </p>
+                            <p><strong>Địa chỉ:</strong> 238/2b Đường Hoàng Diệu 2 , Phường Linh Chiểu, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                        </div>
+                        <div class="address_actions">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+
+                    <div class="address_card">
+                        <div class="address_name">Bích Nga</div>
+                        <div class="address_info">
+                            <p><strong>Số điện thoại:</strong> 0123 456 789</p>
+                            <p><strong>Địa chỉ:</strong> KTX Khu B, Đường Mạc Đĩnh Chi , Phường Linh Xuân, TP. Thủ Đức, TP. Hồ Chí Minh</p>
+                        </div>
+                        <div class="address_actions">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
+                    </div>
+
+                    <button class="btn_add_address">Thêm địa chỉ</button>
+                </div>
+            </div>
+        </section>
+        <script src="Account_js.js"></script>
+    </body>
+</html>

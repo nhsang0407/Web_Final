@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>HiAn</title>
+        <link rel="stylesheet" type="text/css" href="../../Page_HomePage/css/homepage_css.css">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+        <style>
+            /* import font Cherry Bomb One */
+            @import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+        </style>
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="top-header">
+                <div class="logo">
+                    <img src="../../Page_HomePage/images/LogoHiAn_ngang.png" alt="HiAn Logo" />
+                </div>
+
+                <div class="search-bar">
+                    <div class="search-category">
+                        <select>
+                            <option>Tất cả sản phẩm</option>
+                            <option>Thảo mộc sấy khô</option>
+                            <option>Trái cây sấy dẻo</option>
+                            <option>Trái cây sấy giòn</option>
+                            <option>Trái cây sấy thăng hoa</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Tìm kiếm" />
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+
+                <div class="user-actions">
+                    <div class="icon">
+                        <i class="fa fa-heart"></i>
+                        <span>Yêu thích</span>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                    </div>
+                    <!--Khi chưa đăng nhập-->
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="register-btn" onclick="window.location.href='../../Page_Login_Signup/html/login.html?form=register'">Đăng ký</button>
+                        <button class="login-btn" onclick="window.location.href='../../Page_Login_Signup/html/login.html?form=login'">Đăng nhập</button>
+                    </div>
+
+                    <!--Khi đã đăng nhập-->
+                    <div class="user-info" id="userInfo" style="display: none;" onclick="toggleMenu(event)">
+                        <img src="../images/default-avatar.jpg" alt="User Avatar" class="avatar">
+                        <span id="usernameDisplay">Người dùng</span>
+                        <i class="fa fa-chevron-down"></i>
+
+                        <!--Tạo dropdown-->
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li><a href="#">Tài khoản của tôi</a></li>
+                            <li><a href="#">Đơn hàng của tôi</a></li>
+                            <li><a href="#" id="logoutBtn">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="bottom-header">
+                <ul>
+                    <li class="active"><i class="fa fa-th-large"></i> Tất cả sản phẩm</li>
+                    <li><i class="fa fa-home"></i> Trang chủ</li>
+                    <li><i class="fa fa-users"></i> Về chúng tôi</li>
+                    <li><i class="fa fa-calendar"></i> Sự kiện</li>
+                    <li><i class="fa fa-edit"></i> Blog</li>
+                    <li><i class="fa fa-envelope"></i> Liên hệ</li>
+                    <li><i class="fa fa-phone"></i> 123-456-7890 <span class="order-now">ĐẶT HÀNG NGAY</span></li>
+                </ul>
+            </nav> 
+        </header>
+        <!--ĐIỀU KHOẢN & CHÍNH SÁCH-->
+        <section class="policy-section">
+            <div class="policy-container">
+                <!-- SIDEBAR TRÁI -->
+                <aside class="policy-sidebar">
+                    <h3>ĐIỀU KHOẢN & CHÍNH SÁCH</h3>
+                    <ul>
+                        <li class="active" data-target="sales">Chính sách bán hàng & Đổi trả</li>
+                        <li data-target="shipping">Chính sách vận chuyển</li>
+                        <li data-target="privacy">Chính sách bảo mật</li>
+                    </ul>
+                </aside>
+
+                <div class="policy-content">
+                    <!-- Chính sách bán hàng & đổi trả -->
+                    <div id="sales" class="policy-item active">
+                        <h2>Chính sách bán hàng & Đổi trả</h2>
+                        <p>
+                            Tại <strong class="green">HiAn</strong>, chúng tôi cam kết mang đến cho khách hàng trải nghiệm mua sắm trực tuyến nhanh chóng, tiện lợi và an tâm. Chính sách bán hàng và đổi trả của chúng tôi được thiết kế để đảm bảo quyền lợi tối đa cho khách hàng, đồng thời duy trì sự công bằng trong mọi giao dịch.
+                        </p>
+
+                        <h3>Chính sách bán hàng</h3>
+                        <p>
+                            <strong>Cam kết chất lượng:</strong> 
+                            Tất cả các sản phẩm được bán tại <strong class="green">HiAn</strong> đều được kiểm tra chất lượng kỹ càng trước khi đưa đến tay khách hàng. Chúng tôi đảm bảo rằng mọi sản phẩm đều là hàng chính hãng, có nguồn gốc rõ ràng và đạt tiêu chuẩn an toàn thực phẩm.
+                        </p>
+                        <p>
+                            <strong>Hỗ trợ tư vấn:</strong> 
+                            Đội ngũ chăm sóc khách hàng của chúng tôi luôn sẵn sàng hỗ trợ giải đáp mọi thắc mắc về sản phẩm, cách thức đặt hàng, và thông tin vận chuyển. Quý khách có thể liên hệ qua hotline, email, hoặc các kênh mạng xã hội của <strong class="green">HiAn</strong>.
+                        </p>
+                        <p>
+                            <strong>Hóa đơn và thông tin mua hàng:</strong>
+                            Sau khi hoàn tất đặt hàng, khách hàng sẽ nhận được hóa đơn điện tử và thông báo xác nhận qua email hoặc tin nhắn SMS. Các thông tin này sẽ giúp khách hàng theo dõi đơn hàng một cách thuận tiện.
+                        </p>
+
+                        <h3>Chính sách đổi trả</h3>
+                        <p>
+                            Chúng tôi hiểu rằng sự hài lòng của khách hàng là ưu tiên hàng đầu. Vì vậy, <strong class="green">HiAn</strong> hỗ trợ đổi trả sản phẩm trong vòng 
+                            <span>7 ngày </span>
+                            kể từ ngày khách hàng nhận được hàng, với các điều kiện cụ thể như sau:
+                        </p>
+                        <ol>
+                            <li>Điều kiện áp dụng đổi trả:
+                                <ul>
+                                    <li>Sản phẩm không đúng mẫu mã, chúng tôi sẽ đổi theo đơn đặt hàng.</li>
+                                    <li>Sản phẩm bị hư hỏng, móp méo hoặc quá trình vận chuyển làm ảnh hưởng đến chất lượng.</li>
+                                    <li>Sản phẩm còn nguyên tem, nhãn, bao bì và chưa qua sử dụng (đối với các khách hàng do lỗi của <strong class="green">HiAn</strong>).</li>
+                                </ul>
+                            </li>
+                            <li>Quy trình đổi trả:
+                                <ul>
+                                    <li>Bước 1: Quý khách liên hệ với bộ phận chăm sóc khách hàng của <strong class="green">HiAn</strong> qua hotline hoặc email, cung cấp thông tin đơn hàng và lý do đổi trả.</li>
+                                    <li>Bước 2: Sau khi yêu cầu được xác nhận, quý khách gửi sản phẩm cần đổi trả về địa chỉ kho hàng của chúng tôi. Phí vận chuyển đổi trả sẽ được hỗ trợ hoàn lại nếu lỗi thuộc về <strong class="green">HiAn</strong>.</li>
+                                    <li>Bước 3: Sau khi kiểm tra và xác nhận tình trạng sản phẩm, chúng tôi sẽ thực hiện đổi sản phẩm mới hoặc hoàn tiền tùy theo yêu cầu của khách hàng.</li>
+                                </ul>
+                            </li>
+                            <li>Hình thức hoàn tiền:
+                                <ul>
+                                    <li>Hoàn tiền qua tài khoản ngân hàng mà khách hàng cung cấp.</li>
+                                    <li>Hoàn tiền vào ví điện tử (nếu có).</li>
+                                </ul>
+                            </li>
+                        </ol>
+
+                        <h3>Lưu ý quan trọng</h3>
+                        <p>
+                            Thời gian xử lý yêu cầu đổi trả: Trong vòng <span>5 ngày làm việc</span> kể từ khi nhận được sản phẩm đổi trả.
+                            <br/>
+                            <strong class="green">HiAn</strong> có quyền từ chối yêu cầu đổi trả nếu sản phẩm không đáp ứng các điều kiện trên (ví dụ: sản phẩm đã bị sử dụng hoặc không còn nguyên trạng).
+                        </p>
+                        <hr/>
+                        <p>
+                            Chúng tôi luôn sẵn sàng hỗ trợ khách hàng trong mọi tình huống để đảm bảo sự hài lòng và tin tưởng. Nếu có bất kỳ vấn đề nào liên quan đến sản phẩm hoặc dịch vụ, đừng ngần ngại liên hệ với chúng tôi qua các kênh hỗ trợ. Cảm ơn quý khách đã tin tưởng lựa chọn 
+                            <strong class="green">HiAn</strong>.
+                        </p>
+                    </div>
+
+
+                    <!-- Chính sách vận chuyển -->
+                    <div id="shipping" class="policy-item">
+                        <h2>Chính sách vận chuyển</h2>
+                        <p>
+                            Tại HiAn, chúng tôi luôn cố gắng mang đến cho khách hàng trải nghiệm mua sắm trực tuyến nhanh chóng, dễ dàng và an toàn. Để đảm bảo các sản phẩm được giao đến tay khách hàng một cách nhanh chóng và chất lượng, chúng tôi hợp tác với các đối tác vận chuyển uy tín như Giao Hàng Nhanh, Giao Hàng Tiết Kiệm và Viettel Post. Dưới đây là những thông tin chi tiết và các quy định về chính sách vận chuyển của HiAn.                        
+                        </p>
+                        <div class="shipping_imgs">
+                            <img alt="GHN"/>
+                            <img alt="GHTK"/>
+                            <img alt="ViettelPost"/>
+                        </div>
+                        <h3>Thời gian giao hàng</h3>
+                        <p>
+                            Thời gian giao hàng sẽ được tính dựa trên địa chỉ nhận hàng của khách hàng:
+                        </p>
+                        <ul>
+                            <li>
+                            <b>Nội thành:</b> Đối với các tỉnh/thành phố lớn (như TP.HCM, Hà Nội), thời gian giao hàng thường từ
+                            <b>1-2 ngày</b> làm việc.
+                            </li>
+                            <li>
+                            <b>Ngoại thành và các tỉnh xa:</b> Thời gian giao hàng dao động từ <b>3-5 ngày</b> làm việc, tùy thuộc vào địa điểm và khu vực cụ thể.
+                            <br/>
+                            Chúng tôi sẽ gửi thông báo qua email hoặc tin nhắn SMS để cập nhật thông tin về tiến trình đơn hàng, mã vận đơn và đơn vị vận chuyển.
+                            </li>
+                        </ul>
+
+                        <h3>Phí vận chuyển</h3>
+                        <p>
+                            Phí vận chuyển sẽ được tính dựa trên tổng trọng lượng đơn hàng và địa chỉ nhận hàng. Trong quá trình đặt hàng, hệ thống của chúng tôi sẽ tự động tính toán chi phí vận chuyển để khách hàng có thể kiểm tra trước khi thanh toán.
+                        </p>
+                        <p>
+                            <b>Ưu đãi:</b> Đối với các đơn hàng có giá trị từ <b>450.000 VNĐ trở lên</b> chúng tôi
+                            <span>miễn phí vận chuyển</span> trên toàn quốc.
+                        </p>
+
+                        <h3>Các hình thức giao hàng</h3>
+                        <p>Chúng tôi cung cấp 3 phương thức giao hàng sau:</p>
+                        <ol>
+                            <li>Giao hàng tiết kiệm:</li> 
+                            <p>Thời gian giao hàng thông thường, phù hợp với các đơn hàng không yêu cầu gấp.</p>
+                            <li>Giao hàng nhanh:</li> 
+                            <p>Quý khách có thể lựa chọn hình thức giao hàng nhanh nếu cần nhận hàng trong thời gian sớm nhất. Lựa chọn này áp dụng cho các khu vực nội thành của TP.HCM.</p>
+                            <li>Giao hàng hỏa tốc:</li> 
+                            <p>Dành cho những đơn hàng cần được giao ngay trong ngày, đảm bảo sự tiện lợi và nhanh chóng nhất.</p>
+                        </ol>
+
+                        <h3>Trách nhiệm và chính sách xử lý khiếu nại</h3>
+                        <p>
+                            Chúng tôi cam kết đóng gói cẩn thận để đảm bảo sản phẩm đến tay khách hàng trong tình trạng tốt nhất. Nếu sản phẩm bị hư hỏng, móp méo hoặc không đúng với đơn đặt hàng, quý khách vui lòng liên hệ với bộ phận chăm sóc khách hàng của HiAn qua hotline hoặc email để được hỗ trợ.
+                        </p>
+                        <p>
+                            Trường hợp đơn hàng bị thất lạc, chúng tôi sẽ phối hợp với đơn vị vận chuyển để xác minh và giải quyết nhanh chóng cho khách hàng. Trong mọi trường hợp, HiAn luôn đặt quyền lợi của khách hàng lên hàng đầu.
+                        </p>
+
+                        <h3>Lưu ý quan trọng</h3>
+                        <p>
+                            Quý khách vui lòng cung cấp đầy đủ và chính xác địa chỉ nhận hàng để đảm bảo quá trình giao nhận diễn ra thuận lợi.
+                        </p>
+                        <p>
+                            Trường hợp gặp phải sự cố hoãn giao hàng như thiếu xót, dịch bệnh, hoặc ký gửi bất khả kháng, chúng tôi sẽ thông báo sớm nhất đến khách hàng và phối hợp với đơn vị vận chuyển để xử lý.
+                        </p>
+                        <p>
+                            Chính sách đổi trả: HiAn hỗ trợ đổi trả miễn phí trong vòng 7 ngày kể từ khi nhận hàng.
+                        </p>
+                        <p>
+                            Miễn phí vận chuyển nội thành TP.HCM cho tất cả các đơn hàng.
+                        </p>
+                        <hr/>
+                        <p>
+                            <strong class="green">HiAn</strong> hy vọng mang lại sự hài lòng tuyệt đối về dịch vụ vận chuyển. Nếu có bất kỳ thắc mắc nào, quý khách vui lòng liên hệ với chúng tôi để được hỗ trợ. Cảm ơn quý khách đã tin tưởng và đồng hành cùng <strong class="green">HiAn!</strong>
+                        </p>
+                    </div>
+
+
+                    <!-- Chính sách bảo mật -->
+                    <div id="privacy" class="policy-item">
+                        <h2>Chính sách bảo mật</h2>
+                        <p>
+                            <b>HiAn</b> cam kết bảo vệ thông tin cá nhân của khách hàng. Thông tin thu thập chỉ sử dụng vào mục đích xử lý đơn hàng, cung cấp thông tin khuyến mãi và nâng cao trải nghiệm mua sắm của khách hàng.                        
+                        </p>
+                        <p>
+                            Chúng tôi đảm bảo rằng thông tin cá nhân sẽ không được chia sẻ cho bên thứ ba, ngoại trừ các đối tác vận chuyển (Giao Hàng Nhanh, Giao Hàng Tiết Kiệm, Viettel Post) hoặc khi có yêu cầu từ cơ quan pháp luật.
+                        </p>
+                        <p>
+                            Hệ thống của chúng tôi áp dụng các biện pháp bảo mật nghiêm ngặt để bảo vệ dữ liệu khỏi truy cập trái phép. Khách hàng có quyền kiểm tra, chỉnh sửa hoặc yêu cầu xóa thông tin cá nhân bất kỳ lúc nào bằng cách liên hệ qua email 
+                            <b><i>hian.hcm@gmail.com</i></b> hoặc gọi <b><i>hotline 123-456-7890.</i></b>
+                        </p>
+                        <p>
+                            Cảm ơn quý khách đã tin tưởng và đồng hành cùng <b>HiAn!</b>
+                        </p>
+                        <div>
+                            <img alt="Chính sách bảo mật HiAn"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script type="text/javascript">
+            const tabs = document.querySelectorAll('.policy-sidebar li');
+            const contents = document.querySelectorAll('.policy-item');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                // Bỏ active cũ
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
+
+                // Thêm active mới
+                tab.classList.add('active');
+                document.getElementById(tab.dataset.target).classList.add('active');
+                });
+            });
+        </script>
+    </body>
+</html> 

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Product Detail</title>
+        <link rel="stylesheet" type="text/css" href="../../Page_HomePage/css/homepage_css.css">
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    </head>
+    <body>
+        <!-- HEADER -->
+        <header>
+            <div class="top-header">
+                <div class="logo">
+                    <img src="../../Page_HomePage/images/LogoHiAn_ngang.png" alt="HiAn Logo" />
+                </div>
+
+                <div class="search-bar">
+                    <div class="search-category">
+                        <select>
+                            <option>Tất cả sản phẩm</option>
+                            <option>Thảo mộc sấy khô</option>
+                            <option>Trái cây sấy dẻo</option>
+                            <option>Trái cây sấy giòn</option>
+                            <option>Trái cây sấy thăng hoa</option>
+                        </select>
+                    </div>
+                    <input type="text" placeholder="Tìm kiếm" />
+                    <button><i class="fa fa-search"></i></button>
+                </div>
+
+                <div class="user-actions">
+                    <div class="icon">
+                        <i class="fa fa-heart"></i>
+                        <span>Yêu thích</span>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-shopping-cart"></i>
+                        <span>Giỏ hàng</span>
+                    </div>
+                    <!--Khi chưa đăng nhập-->
+                    <div class="auth-buttons" id="authButtons">
+                        <button class="register-btn" onclick="window.location.href='../../Page_Login_Signup/html/login.html?form=register'">Đăng ký</button>
+                        <button class="login-btn" onclick="window.location.href='../../Page_Login_Signup/html/login.html?form=login'">Đăng nhập</button>
+                    </div>
+
+                    <!--Khi đã đăng nhập-->
+                    <div class="user-info" id="userInfo" style="display: none;" onclick="toggleMenu(event)">
+                        <img src="../images/default-avatar.jpg" alt="User Avatar" class="avatar">
+                        <span id="usernameDisplay">Người dùng</span>
+                        <i class="fa fa-chevron-down"></i>
+
+                        <!--Tạo dropdown-->
+                        <ul class="dropdown-menu" id="dropdownMenu">
+                            <li><a href="#">Tài khoản của tôi</a></li>
+                            <li><a href="#">Đơn hàng của tôi</a></li>
+                            <li><a href="#" id="logoutBtn">Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <nav class="bottom-header">
+                <ul>
+                    <li class="active"><i class="fa fa-th-large"></i> Tất cả sản phẩm</li>
+                    <li><i class="fa fa-home"></i> Trang chủ</li>
+                    <li><i class="fa fa-users"></i> Về chúng tôi</li>
+                    <li><i class="fa fa-calendar"></i> Sự kiện</li>
+                    <li><i class="fa fa-edit"></i> Blog</li>
+                    <li><i class="fa fa-envelope"></i> Liên hệ</li>
+                    <li><i class="fa fa-phone"></i> 123-456-7890 <span class="order-now">ĐẶT HÀNG NGAY</span></li>
+                </ul>
+            </nav> 
+        </header>
+        <section class="product_info">
+            <div class="product_img">
+                <img src="../../Hình/Bưởi sấy dẻo 200g.png" alt="Bưởi sấy dẻo 200g">
+
+                <div class="product_gallery_container">
+                    <button class="gallery-nav left" id="galleryPrev">
+                        <i class="fa fa-chevron-left"></i>
+                    </button>
+
+                    <div class="product_gallery" id="productGallery">
+                        <div class="thumb"><img src="../../Hình/Bưởi sấy dẻo 200g.png" alt=""></div>
+                        <div class="thumb"><img src="../../Hình/Bưởi sấy dẻo 650g.png" alt=""></div>
+                        <div class="thumb"><img src="../../Hình/Bưởi sấy dẻo 225g.png" alt=""></div>
+                        <div class="thumb video-thumb">
+                            <img src="../../raw/Flip Bưởi sấy dẻo.png" alt="">
+                            <div class="play-icon"><i class="fa fa-play"></i></div>
+                        </div>
+                    </div>
+
+                    <button class="gallery-nav right" id="galleryNext">
+                        <i class="fa fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="product_description">
+                <b>Bưởi sấy dẻo 200g, hũ, mẫu Tobita</b>
+                <p>Ăn vặt nông sản, hương vị tự nhiên, dẻo ngon, ít ngọt</p>
+
+                <div class="product-actions">
+                    <div class="heart-container">
+                        <span class="heart" id="heart">♡</span>
+                        <span class="like-count" id="like-count">56</span>
+                    </div>
+                    <div class="share">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                </div>
+
+                <hr/>
+
+                <div class="product_description2">
+                    <div class="left">
+                        <p class="price">64.000đ</p>
+                        <p class="old-price">80.000đ</p>
+                    </div>
+                    <div class="right">
+                        <div class="rating">
+                            <div class="star-container">
+                                <span class="star" id="star">☆</span>
+                                <span class="score">4.7</span>
+                            </div>
+                            <div class="review-box">
+                            💬 22 đánh giá
+                            </div>
+                        </div>
+                        <p><strong>93%</strong> người mua đã giới thiệu sản phẩm này.</p>
+                    </div>
+                </div>
+
+                <hr/>
+                <div class="product_size">
+                    <p>Mẫu & KTL</p>
+
+                    <label class="option">
+                        <input type="radio" name="product_size" value="200g" checked>
+                        <span>Hũ Tobita 200g</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="product_size" value="650g">
+                        <span>Bịch mawashi 650g</span>
+                    </label>
+
+                    <label class="option">
+                        <input type="radio" name="product_size" value="225g">
+                        <span>Bịch kraft 225g</span>
+                    </label>
+                </div>
+
+                <hr/>
+                <div class="action">
+                    <span class="product_quantity">
+                        <button id="decrease">-</button>
+                        <span id="counter">1</span>
+                        <button id="increase">+</button>
+                    </span>
+                    <button type="button" id="addCart">
+                        <i class="fa fa-shopping-bag"></i> THÊM VÀO GIỎ HÀNG
+                    </button>
+                </div>
+                <div class="support-info">
+                    <div class="support-item">
+                        <span class="icon">🚚</span>
+                        <div class="text">
+                            <p class="title">Miễn phí Ship TP. HCM</p>
+                            <p class="desc">Bán kính 10km nội thành TP. Hồ Chí Minh</p>
+                        </div>
+                    </div>
+                    <hr />
+                    <div class="support-item">
+                        <span class="icon">🛍️</span>
+                        <div class="text">
+                            <p class="title">Đổi trả miễn phí</p>
+                            <p class="desc">Hoàn trả trong vòng 7 ngày</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="../js/product_detail_js.js"></script>
+    </body>
+</html>

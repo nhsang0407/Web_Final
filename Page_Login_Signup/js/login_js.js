@@ -9,7 +9,7 @@ function showLogin() {
     loginForm.classList.add("show");
     registerForm.classList.remove("show");
 
-    promoImg.src = "../images/fruits.jpg"; //add hinh vo cho dung hinh
+    promoImg.src = "../images/fruits.jpg";
 
     loginBtn.classList.add("active");
     registerBtn.classList.remove("active");
